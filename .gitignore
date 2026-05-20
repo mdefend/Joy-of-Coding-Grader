@@ -1,0 +1,26 @@
+# Based off the EECS 485 gitingore
+# In case I drag files in 
+*:Zone.Identifier
+
+
+
+# Python
+*.pyc
+__pycache__/
+*.egg-info*
+dist/
+env/
+venv/
+venv3/
+.venv/
+.pytest_cache
+.env
+
+# Text editors and IDEs
+*~
+*.lock
+*.swp
+.vscode
+.ropeproject/
+.vscode/
+.idea
