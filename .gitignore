@@ -1,7 +1,7 @@
 # Based off the EECS 485 gitingore
 # In case I drag files in 
 *:Zone.Identifier
-
+responses/
 
 
 # Python
