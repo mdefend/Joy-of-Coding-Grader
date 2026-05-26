@@ -1,0 +1,201 @@
+{
+  "context": [
+    "calling and defining functions",
+    "function libraries",
+    "numpy",
+    "variables",
+    "local and global variables",
+    "input and output",
+    "debugging",
+    "function syntax",
+    "coding as problem solving",
+    "control flow",
+    "python syntax",
+    "comments",
+    "creating good readable code",
+    "computational thinking (thinking like a computer)"
+  ],
+  "questions": [
+    {
+      "number": 1,
+      "question": "Given the reflections you've documented in the codex for this week, summarize the key points that you believe are relevant to your development as a coder, including (1) the struggles you faced, (2) how you overcame those struggles, and (3) the impact of this week's experiences on your knowledge of coding.",
+      "examples": {
+        "passing": {
+          "user": "I struggled with using numpy in the exercises. While working on the codex, I went back and kept a notebook for reminders about syntax and other code information. This helped when I reviewed my code and realized I used NP instead of np to use functions from numpy. The impact of this is that I learned how to use numpy as well as learned how important it is to keep track of what you've learned.",
+          "response": {
+            "pass": true,
+            "percentage": 80,
+            "feedback": "This is a great reflection on your development as a coder! It's great to hear that you used strategies like keeping a notebook to support your coding journey. The strategies you used and your overcoming of your struggles show that you've developed greatly this week as a coder. Keep up the awesome work!"
+          }
+        },
+        "failing": {
+          "user": "I didn't struggle with anything this week.",
+          "response": {
+            "pass": false,
+            "percentage": 15,
+            "feedback": "It's great that you didn't struggle this week, we love to hear about student success! However, can you tell us a bit about how you've developed as a coder? Maybe you've learned something new or used different strategies when working on the codex. Try thinking about these ideas and if you're feeling stuck, feel free to reach out to a coach."
+          }
+        }
+      }
+    },
+    {
+      "number": 2,
+      "question": "Recall the most meaningful points from this codex and list them (at least 3).",
+      "examples": {
+        "passing": {
+          "user": "How to define Functions with def. How to make different types of variables and what to use them for. You can use functions from libraries inside new functions.",
+          "response": {
+            "pass": true,
+            "percentage": 80,
+            "feedback": "Nice job sharing meaningful points from the codex! Your response shows a great understanding of the codex! Keep up the good work!"
+          }
+        },
+        "failing": {
+          "user": "functions\ndef\nlibraries",
+          "response": {
+            "pass": false,
+            "percentage": 35,
+            "feedback": "Nice job identifying key terms from the codex. You have a great start, but to strengthen your response, try explaining more about each topic! For example, what does def do? You've got this and feel free to reach out to a coach if you need any help!"
+          }
+        }
+      }
+    },
+    {
+      "number": 3,
+      "question": "Summarize those points in one to two sentences that capture the most important details of the codex.",
+      "examples": {
+        "passing": {
+          "user": "The most important part of codex was learning how to create and use functions. We learned about how def is used to define a function, what return statements do, how to use functions from libraries in our functions and more.",
+          "response": {
+            "pass": true,
+            "percentage": 90,
+            "feedback": "Great job summarizing points from the codex! Your understanding of functions is great and will be helpful for future assignments. Awesome job!"
+          }
+        },
+        "failing": {
+          "user": "The most important part of the codex was math.",
+          "response": {
+            "pass": false,
+            "percentage": 20,
+            "feedback": "Great start summarizing the important parts of the codex. To improve your response and better your understanding, try expanding on what you used to do math, such as functions or numpy. If you're feeling confused or need some guidance, feel free to reach out to a coach! You've got this!"
+          }
+        }
+      }
+    },
+    {
+      "number": 4,
+      "question": "Match your summary to one or more of the main competencies for this codex. Explain why the summary is related to the competency or competencies you chose.",
+      "competencies": [
+        "define and call a function in Python",
+        "combine functions, including those from software libraries, to generate outputs like calculations and manipulated images",
+        "use best practices for writing code in Python for programs of any size"
+      ],
+      "examples": {
+        "passing": {
+          "user": "In this codex, I learned that I should comment my code to increase readability, which is related to the competency use best practices for writing code in Python for programs of any size.",
+          "response": {
+            "pass": true,
+            "percentage": 90,
+            "feedback": "Awesome job sharing what you learned! Using comments to increase readability is a great strategy! Keep up the great work!"
+          }
+        },
+        "failing": {
+          "user": "The main competency was functions, which is what I learned.",
+          "response": {
+            "pass": false,
+            "percentage": 25,
+            "feedback": "Great job sharing your learning! To strengthen your response, try writing more about how you used functions and how that relates to the competencies. If you're feeling confused or just need general guidance, feel free to reach out to a coach through call or email."
+          }
+        }
+      }
+    },
+    {
+      "number": 5,
+      "question": "What concept related to the chosen competency did you struggle with that you ultimately learned? What was causing you to struggle, and how did you overcome the difficulty you were experiencing (such as different strategies you tried while solving a problem)?",
+      "examples": {
+        "passing": {
+          "user": "I struggled with defining a function in Python. When I was doing the codex, I kept trying to use the functions before I defined them. After talking with a coach and reviewing with them, I realized my mistake and made sure to double check that I defined my functions before using them.",
+          "response": {
+            "pass": true,
+            "percentage": 85,
+            "feedback": "It's great to hear about how you overcame your struggles! Talking with a coach or even a friend is a great strategy to use when struggling with difficult concepts. We're so glad that you figured out your mistake and great job learning! Keep up the great work!"
+          }
+        },
+        "failing": {
+          "user": "I didn't struggle at all.",
+          "response": {
+            "pass": false,
+            "percentage": 25,
+            "feedback": "It's great to hear that you didn't struggle! Even if you feel like you didn't struggle, try to write about how you solved some of the harder problems in the codex. Reflecting on how you solved problems, even if you solved them the first try can be a great way to review your knowledge!"
+          }
+        }
+      }
+    },
+    {
+      "number": 6,
+      "question": "Pose a question or two you have about the topics in the codex that you're curious about (not what you struggled with). For example, \"What other inputs and outputs can I have in a Python function beyond numbers?\"",
+      "examples": {
+        "passing": {
+          "user": "Are there other types of variables out there? Can you make your own libraries?",
+          "response": {
+            "pass": true,
+            "percentage": 90,
+            "feedback": "These are great questions! We love that you're thinking beyond the codex and are curious about Python! If you would like to learn more about these questions with a coach, feel free to send us an email or schedule a call, we'd be happy to chat with you!"
+          }
+        },
+        "failing": {
+          "user": "What is a variable?",
+          "response": {
+            "pass": false,
+            "percentage": 45,
+            "feedback": "This is a good question! For this question, it might be useful to review the codex or reach out to a coach as this is a very important concept in the codex. Struggling is okay and we'd love to work with you to guide you towards success."
+          }
+        }
+      }
+    },
+    {
+      "number": 7,
+      "question": "What about the WonderBot's response surprised you? What didn't surprise you?",
+      "examples": {
+        "passing": {
+          "user": "WonderBot's response surprised me because it asked me a lot of follow up questions about my question. What didn't surprise me was that it told me there are a lot of different libraries for python that do so many different things.",
+          "response": {
+            "pass": true,
+            "percentage": 65,
+            "feedback": "Great reflection! It's great that you noticed how WonderBot likes to answer questions and how you learned more about libraries! It might be useful to note this down in case you want to use WonderBot for help in the future! Awesome work!"
+          }
+        },
+        "failing": {
+          "user": "I didn't like WonderBot's response.",
+          "response": {
+            "pass": false,
+            "percentage": 20,
+            "feedback": "We're sorry you didn't like WonderBot's response. Could you expand on why you disliked it? If WonderBot failed to answer your question, please wait a few minutes and try again. If WonderBot isn't working or you would like to dive deeper into your question, feel free to reach out to a coach."
+          }
+        }
+      }
+    },
+    {
+      "number": 8,
+      "question": "Write a comment or two about the codex relevant to your learning. For example: \"What I enjoyed most/least was...\" or \"What I found most/least useful was...\" or \"During most of the codex, I felt...\"",
+      "examples": {
+        "passing": {
+          "user": "What I enjoyed the most was creating the spirograph with the spirograph function! It was so cool to see how to use code for creative things!",
+          "response": {
+            "pass": true,
+            "percentage": 75,
+            "feedback": "It's great to hear that you enjoyed creating the spirograph! We always love hearing that students enjoyed the codex! We hope you keep enjoying the creative exercises in future assignments!"
+          }
+        },
+        "failing": {
+          "user": "I enjoyed making code.",
+          "response": {
+            "pass": false,
+            "percentage": 40,
+            "feedback": "It's good to hear you enjoyed making code! To expand a bit further, what parts of coding were your favorite? Was there anything you particularly enjoyed making?"
+          }
+        }
+      }
+    }
+  ]
+}

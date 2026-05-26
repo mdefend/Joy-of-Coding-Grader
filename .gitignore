@@ -2,6 +2,8 @@
 # In case I drag files in 
 *:Zone.Identifier
 responses/
+examples/
+config/
 
 
 # Python
