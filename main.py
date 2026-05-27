@@ -2,5 +2,5 @@
 from grader import Grader 
 
 grading = Grader()
-pdf_path = "examples/example_1.pdf"
-grading.grade_pdf(pdf_path)
+pdf_path = "examples/ee"
+print(grading.grade_pdf(pdf_path))

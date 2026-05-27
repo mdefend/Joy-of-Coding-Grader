@@ -28,7 +28,7 @@ GRADER_PROMPT = """You are a tutor for an introductory Python coding course for 
 class Grader:
 
     def __init__(self):
-           """intialize grader"""
+           """Intializes the grader"""
            self.context = None
            self.questions_examples = None
            self.config_path = "config"
@@ -56,9 +56,18 @@ class Grader:
     def grade_pdf(self, pdf_path: str):
         """Does all of the main grading work."""
         student_resp = self.extract_pdf_data(pdf_path)
+        if isinstance(student_resp, dict) and "grader_error" in student_resp:
+            return student_resp
+        if all(a == "<BLANK>" for a in student_resp['answers']):
+            return {"grader_error": "all blank"}
         prompt = self.build_prompt(student_resp['answers'])
         claude_resp = self.api_call(GRADER_PROMPT, {"type": "text", "text": prompt})
-        print(claude_resp)
+        results = { 
+            'assignment': self.config_path,
+            'student' : student_resp,
+            'grades' : claude_resp,
+        }
+        return results
     def extract_pdf_data(self,pdf_path):
         """extracts pdf info and loads config."""
         self.config_path = self.config_path + "/intro_coding/assignment_1.json"
@@ -68,19 +77,22 @@ class Grader:
             assignment = json.load(f)
             self.questions_examples = assignment['questions']
             self.context = assignment['context'] 
-        with open(pdf_path,"rb") as pdf:
-              pdf_data = pdf.read()
-              pdf_base64 = base64.b64encode(pdf_data).decode("utf-8")
-              content = {
-                        "type": "document",
-                        "source": {
-                            "type": "base64",
-                            "media_type": "application/pdf",
-                            "data": pdf_base64
-                        }
-                    }
-              api_resp = self.api_call(PDF_PROMPT,content)
-              return self.parse_grading_response(api_resp)
+        try:
+            with open(pdf_path,"rb") as pdf:
+              pdf_base64 = pdf.read()
+        except FileNotFoundError:
+            return {"grader_error": "PDF could not be read"}
+        pdf_base64 = base64.b64encode(pdf_base64).decode("utf-8")
+        content = {
+            "type": "document",
+            "source": {
+                "type": "base64",
+                "media_type": "application/pdf",
+                "data": pdf_base64
+            }
+        }
+        api_resp = self.api_call(PDF_PROMPT,content)
+        return self.parse_grading_response(api_resp)
         
     def parse_grading_response(self, raw: str) -> dict:
         """Cleans up api response, in case claude has weird formatting."""
@@ -91,9 +103,10 @@ class Grader:
             match = re.search(r"\{.*\}", raw, re.DOTALL)
             if match:
                 return json.loads(match.group())
-            raise ValueError(f"Could not parse grading response: {raw}") #TO DO: Fix this! 
+            return {"grader_error": "answers not found"} 
 
     def format_examples(self, question: dict) -> str:
+        """Formats the examples for the prompt."""
         passing = question["examples"]["passing"]
         failing = question["examples"]["failing"]
     
@@ -105,6 +118,7 @@ class Grader:
         User: {failing["user"]}
         Response: {json.dumps(failing["response"])}"""
     def build_prompt(self, answers: dict) -> str:
+        """Builds the combined prompt with student respones and questions."""
         context_str = ", ".join(self.context)
     
         questions_str = ""
