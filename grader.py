@@ -2,8 +2,9 @@ import json
 import base64
 import re
 import os
-from dotenv import load_dotenv
 import anthropic
+from dotenv import load_dotenv
+from pypdf import PdfReader
 load_dotenv() 
 client = anthropic.Anthropic( # defaults to os.environ.get("ANTHROPIC_API_KEY") which is what we use  
 )
@@ -59,6 +60,9 @@ class Grader:
     def grade_pdf(self, pdf_path: str):
         """Does all of the main grading work."""
         self.pdf_path = pdf_path
+        error_check = self.config_setup("intro_coding", "assignment_1.json")
+        if error_check != None: 
+            return error_check
         student_resp = self.extract_pdf_data()
         if isinstance(student_resp, dict) and "grader_error" in student_resp:
             return student_resp
@@ -73,17 +77,31 @@ class Grader:
             'grades' : claude_resp,
         }
         return results
+    def config_scan(self):
+        pass
+    def config_setup(self,camp=None,assign_name=None):
+        """Does the autosetup"""
+        assignment_config = None
+        if camp != None and assign_name != None:
+            self.config_path =  self.config_path + "/"  + camp + "/" + assign_name
+        else: 
+            self.config_scan()
+        try: 
+            with open(self.config_path) as f:
+                assignment_config = json.load(f)
+        except FileNotFoundError: 
+             return {
+                "grader_error": "No config found for {camp}/{assign_name}"
+            }
+    # 6. Store values
+        self.questions_examples = assignment_config["questions"]
+        self.context = assignment_config["context"]
+        self.assignment = assignment_config["assignment"]
+        return None
 
     def extract_pdf_data(self):
         """extracts pdf info and loads config."""
-        self.config_path = self.config_path + "/intro_coding/assignment_1.json"
-        """temporary auto load"""
         pdf_base64 = None
-        with open(self.config_path) as f:
-            assignment_config = json.load(f)
-            self.questions_examples = assignment_config['questions']
-            self.context = assignment_config['context'] 
-            self.assignment = assignment_config['assignment']
         try:
             with open(self.pdf_path,"rb") as pdf:
               pdf_base64 = pdf.read()
@@ -161,9 +179,8 @@ class Grader:
 
     def print_to_json(self,results,output_path,student_id): 
         """Prints everything into a json file in a folder and determines if it needs manual review."""
-        #TO DO: 4 folders: errors, manual review, pass, and fail
         if isinstance(results, dict) and "grader_error" in results:
-            output_path = output_path + "error/"+ f"{self.assignment}.json"
+            output_path = output_path = output_path + "error/" +  self.assignment + "/" + student_id +".json"    
             results["student_id"] = student_id
             results['submission'] = self.pdf_path
         else: 
@@ -173,8 +190,8 @@ class Grader:
                 all_results = json.load(f)
         except FileNotFoundError:
             all_results = [] 
+            os.makedirs(os.path.dirname(output_path), exist_ok=True)
         all_results.append(results)
-        os.makedirs(os.path.dirname(output_path), exist_ok=True)
         with open(output_path, "w") as f:
             json.dump(all_results, f, indent=2)
 
