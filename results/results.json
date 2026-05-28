@@ -1,0 +1,69 @@
+[
+  {
+    "assignment": "config/intro_coding/assignment_1.json",
+    "student": {
+      "numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "answers": [
+        "The Struggles I've Faced - Some struggles I faced were determining correct syntax/fixing syntax errors when writing functions, how to print out a particular output of a function when the function has multiple outputs, how to correctly call a function with inputs and finally, understanding the difference between inside the function variables and outside the function variables/understanding why local variables (inside the function variables) cannot be accessed outside a function. How I Overcame Those Struggles - The main methods I used to overcome these struggles were reading the notes/tips provided in the codex, doing the provided practice problems, and coming up with analogies. Both the notes/tips and the analogies helped me understand the concepts themselves while doing the practice problems helped me recognize patterns associated with the concepts. The Impact of This Week's Experiences on My Knowledge of Coding - This section of the codex not only expanded my knowledge of coding by providing information on how functions work and how to define and call them, but also showed me how functions can used in a real world context, such as them being used to create a Scientific Graphing Calculator in Python.",
+        "<BLANK>",
+        "The most important parts of this codex was learning the basics, such as simple syntax, what order you have to code in, making sure everything is in place, and how to debug. These parts are really important because they provide the basis for more advanced coding.",
+        "defining and calling a function in python was a main competency for me. this is related to the summary because it is one of the basics of python that i learned.",
+        "I was struggling a little bit with defining and calling a function in Python at first. I think it was because I was still trying to understand the basics of Python, so similar to learning a new language like Spanish, the initial adjustment was limiting me for a bit. I overcame this by really trying to fully understand the concept before moving forward, which consequently made the rest of the codex way easier than if I rushed.",
+        "No questions",
+        "I was surprised that the WonderBot prompted me to think more about the question I was asking it by answering everything in questions. On the other hand, I wasn't surprised that it started every sentence with a positive affirmation about the question.",
+        "What I found most enjoyable was when I was challenged by the codex to \"figure it out."
+      ]
+    },
+    "grades": {
+      "question_1": {
+        "pass": true,
+        "percentage": 95,
+        "feedback": "Wow, what a thorough and thoughtful reflection! You did an excellent job breaking down your struggles, the strategies you used to overcome them (especially using analogies and practice problems\u2014those are amazing techniques!), and the real-world impact of your learning. Your understanding of functions and variables is clearly growing. Keep up this fantastic level of reflection!"
+      },
+      "question_2": {
+        "pass": false,
+        "percentage": 0,
+        "feedback": "It looks like this question was left blank! We'd love to hear about at least three meaningful points you took away from the codex. Try thinking about things like defining functions, using libraries like numpy, or the difference between local and global variables. If you're feeling stuck, feel free to reach out to a coach for help!"
+      },
+      "question_3": {
+        "pass": true,
+        "percentage": 70,
+        "feedback": "Nice summary! It's great that you recognized the importance of foundational skills like syntax and debugging. To strengthen your response even more, try mentioning a specific concept you learned, like defining functions or working with variables. Great work overall!"
+      },
+      "question_4": {
+        "pass": true,
+        "percentage": 65,
+        "feedback": "Good job connecting defining and calling functions to a main competency! To make your response even stronger, try explaining a bit more about why this competency is foundational\u2014what does it allow you to do as a coder? Keep up the great work!"
+      },
+      "question_5": {
+        "pass": true,
+        "percentage": 85,
+        "feedback": "Great reflection! Your analogy comparing learning Python to learning Spanish is really insightful. We love that you took the time to fully understand the concept before moving on\u2014that's such a valuable strategy that will help you throughout your coding journey. Keep up the awesome work!"
+      },
+      "question_6": {
+        "pass": false,
+        "percentage": 15,
+        "feedback": "It's okay to feel like you don't have questions, but being curious is a huge part of growing as a coder! Try thinking about something you'd like to explore further\u2014maybe about what else functions can do, or other libraries beyond numpy. If you'd like to brainstorm together, feel free to reach out to a coach!"
+      },
+      "question_7": {
+        "pass": true,
+        "percentage": 80,
+        "feedback": "Awesome reflection on WonderBot's response! It's great that you noticed its tendency to ask follow-up questions and use positive affirmations. Noticing these patterns will help you use WonderBot more effectively in the future. Great work!"
+      },
+      "question_8": {
+        "pass": true,
+        "percentage": 60,
+        "feedback": "It's great that you enjoyed being challenged to figure things out on your own\u2014that's a fantastic mindset for a coder! Could you expand a bit more on what specific challenges you enjoyed? Sharing more details would make your reflection even stronger. Keep it up!"
+      }
+    }
+  }
+]

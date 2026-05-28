@@ -62,12 +62,14 @@ class Grader:
             return {"grader_error": "all blank"}
         prompt = self.build_prompt(student_resp['answers'])
         claude_resp = self.api_call(GRADER_PROMPT, {"type": "text", "text": prompt})
+        claude_resp = json.loads(claude_resp)
         results = { 
             'assignment': self.config_path,
             'student' : student_resp,
             'grades' : claude_resp,
         }
         return results
+
     def extract_pdf_data(self,pdf_path):
         """extracts pdf info and loads config."""
         self.config_path = self.config_path + "/intro_coding/assignment_1.json"
@@ -117,6 +119,7 @@ class Grader:
         Failing Example:
         User: {failing["user"]}
         Response: {json.dumps(failing["response"])}"""
+
     def build_prompt(self, answers: dict) -> str:
         """Builds the combined prompt with student respones and questions."""
         context_str = ", ".join(self.context)
@@ -150,3 +153,17 @@ class Grader:
     "question_7": {{"pass": true/false, "percentage": 0-100, "feedback": "..."}},
     "question_8": {{"pass": true/false, "percentage": 0-100, "feedback": "..."}}
      }}"""
+
+    def handleoutput(self,results,output_path): 
+        """Prints everything into a json and determines if it needs manual review."""
+        if isinstance(results, dict) and "grader_error" in results:
+            pass
+         #TO DO: Make folder with Answers and PDF?  
+        try:
+            with open("") as f:
+                all_results = json.load(f)
+        except FileNotFoundError:
+            all_results = [] 
+        all_results.append(results)
+        with open(output_path, "w") as f:
+            json.dump(all_results, f, indent=2)
