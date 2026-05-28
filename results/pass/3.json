@@ -1,0 +1,69 @@
+[
+  {
+    "assignment": "joc_intro_1",
+    "student": {
+      "numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "answers": [
+        "Through the things I worked on through the codes, I had so many stops and challenges that made me really frustrated. I'm doing this with 0 prior experience to coding and understanding what it is took a moment for me to comprehend. Overcoming the unfamiliar words and formats was hard without trying to do it with the power to do so. I emptied my mind before opening my computer because it needs as much brain space as possible. This week's content is really cool and made me rethink what I used to think coding was.",
+        "The fact that you have to define a variable first or python will barf, that coding can create the most complex images, and that it can be a written or visual tool to achieve what results you want",
+        "The most important details of the codex were understanding functions and how to correctly use the variables and computer signals that come within them. Understanding these then brings you to the next crucial step of organizing such variables in a way that the computer can understand considering it is picky.",
+        "In this codex, I learned how to use functions like np.sqrt, which connects to the competency combine functions, including those from software libraries, to generate outputs like calculations. I also realized how important colons are in Python, which relates to use best practices for writing code in Python for programs of any size, because forgetting small things can break the code. Additionally, I practiced defining and calling functions in Python by creating functions to create images.",
+        "In the define and call a function competency, there wasn't any concept I was confused about, I was just wondering about which line to define the variables in and the effect of variable names, but after trying code in the Scratchpad and going down farther in the codex, I figured it out.",
+        "Is there a way I could animate an image using plot graphs in Python?",
+        "It wasn't surprising to me that numpy is a library for mathematical sequences because it was part of the math section of the codex.",
+        "What I enjoyed most about the codex was how detailed and thorough it was. It didn't feel like it was over-explaining things or making it difficult to understand, it was precise and I found that very helpful. Additionally, I loved the overall aesthetic of the codex as it gave the overall experience a nice touch!"
+      ]
+    },
+    "grades": {
+      "question_1": {
+        "pass": true,
+        "percentage": 70,
+        "feedback": "Thank you for sharing such an honest reflection! Starting with zero prior experience is no small feat, and it's wonderful that you're pushing through the challenges. I love that you described 'emptying your mind' to make space for learning\u2014that's a great mental strategy! To make your response even stronger, could you share a specific struggle you faced (like a particular concept or syntax issue) and a specific strategy you used to overcome it? Keep up the great mindset!"
+      },
+      "question_2": {
+        "pass": true,
+        "percentage": 75,
+        "feedback": "Great job listing meaningful points from the codex! Your note about defining variables before using them shows a solid understanding of Python's behavior. I love that you noticed how coding can be both a written and visual tool\u2014what a cool insight! To strengthen this further, you could add a bit more detail about one of the points, like an example of a complex image you created. Keep it up!"
+      },
+      "question_3": {
+        "pass": true,
+        "percentage": 80,
+        "feedback": "Awesome summary! You captured the key ideas of functions, variables, and the importance of organizing code so the computer can understand it. Your description of the computer as 'picky' is a fun and accurate way to think about Python syntax! Great work!"
+      },
+      "question_4": {
+        "pass": true,
+        "percentage": 95,
+        "feedback": "Fantastic response! You connected your learning to multiple competencies with clear examples\u2014using np.sqrt for combining library functions, colons for best practices, and defining/calling functions to create images. This shows a really strong understanding of the codex. Keep up the amazing work!"
+      },
+      "question_5": {
+        "pass": true,
+        "percentage": 70,
+        "feedback": "Nice reflection! It's great that you used the Scratchpad to experiment with variable placement and naming\u2014that's an excellent strategy for learning. To strengthen your response further, could you share a specific example of what you tried in the Scratchpad and what you figured out? Keep exploring like this!"
+      },
+      "question_6": {
+        "pass": true,
+        "percentage": 85,
+        "feedback": "What a creative and curious question! Animation with plots is a really cool topic to explore in Python. If you want to dive deeper into this, feel free to reach out to a coach via email or schedule a call\u2014we'd love to chat about animation libraries with you!"
+      },
+      "question_7": {
+        "pass": true,
+        "percentage": 55,
+        "feedback": "Good observation that numpy fits naturally with the math section of the codex! To strengthen your response, could you also share something that DID surprise you about WonderBot's response? Reflecting on both sides gives you a fuller picture of your learning. Keep going!"
+      },
+      "question_8": {
+        "pass": true,
+        "percentage": 85,
+        "feedback": "What a lovely comment! It's wonderful to hear that you found the codex precise and helpful, and that the aesthetic added to your experience. We love hearing that students enjoy both the content and the design! Keep up the great reflections!"
+      }
+    }
+  }
+]

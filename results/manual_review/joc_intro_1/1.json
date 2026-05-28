@@ -27,42 +27,42 @@
       "question_1": {
         "pass": true,
         "percentage": 95,
-        "feedback": "Wow, what an incredibly thorough and thoughtful reflection! You clearly identified specific struggles, like syntax errors and understanding local vs. global variables, and shared great strategies like using analogies and practice problems to overcome them. Connecting your learning to real-world applications like a scientific graphing calculator shows excellent insight. Keep up the amazing work!"
+        "feedback": "Wow, what an incredibly thorough and thoughtful reflection! You clearly outlined your struggles, the strategies you used to overcome them (notes, analogies, and practice problems are excellent techniques!), and the real-world impact of your learning. The connection you made to the Scientific Graphing Calculator shows you're thinking about coding beyond just the codex. Keep up the fantastic work!"
       },
       "question_2": {
         "pass": false,
         "percentage": 0,
-        "feedback": "It looks like this answer was left blank! We'd love to hear about the meaningful points you took away from the codex\u2014try listing at least 3, such as topics like functions, variables, or debugging. If you're feeling stuck, feel free to reach out to a coach for guidance. You've got this!"
+        "feedback": "It looks like this question was left blank! We'd love to hear about the most meaningful points from the codex - try listing at least 3 ideas that stood out to you, such as defining functions, using libraries, or working with variables. If you're feeling stuck, feel free to reach out to a coach for guidance!"
       },
       "question_3": {
         "pass": true,
         "percentage": 70,
-        "feedback": "Nice summary! You highlighted important foundational ideas like syntax, order, and debugging. To strengthen your response even more, try connecting these basics to specific concepts you learned, like functions or variables. Great effort!"
+        "feedback": "Nice job summarizing the codex and recognizing that the basics provide the foundation for more advanced coding! To strengthen your response even further, try mentioning specific concepts like functions, variables, or debugging strategies you learned. Great work!"
       },
       "question_4": {
         "pass": true,
         "percentage": 65,
-        "feedback": "Good job identifying defining and calling functions as a main competency! To make your response even stronger, try explaining a bit more about how this competency connects to your summary\u2014for example, why functions are such an important basic. Keep up the great work!"
+        "feedback": "Good job identifying defining and calling functions as a main competency! To strengthen your response, try explaining a bit more about why this competency connects to your summary - for example, how does learning the basics of functions help you with readable code or problem solving? Keep it up!"
       },
       "question_5": {
         "pass": true,
         "percentage": 85,
-        "feedback": "What a great reflection! Your analogy of learning Python like learning a new language is really insightful, and it's wonderful that you took the time to fully understand the concept before moving on. That patience and dedication will serve you well as a coder. Awesome work!"
+        "feedback": "Great reflection! The analogy of learning a new language like Spanish is a wonderful way to think about learning Python. It's awesome that you took the time to fully understand the concept before moving on - that's a really mature learning strategy that will serve you well. Keep up the great work!"
       },
       "question_6": {
         "pass": false,
         "percentage": 10,
-        "feedback": "It's okay to feel like you don't have questions, but being curious is a huge part of growing as a coder! Try thinking about something you'd like to explore further\u2014maybe about functions, libraries, or variables. If you'd like to brainstorm together, feel free to reach out to a coach!"
+        "feedback": "It's great that you feel confident with the material! However, curiosity is such an important part of being a coder. Try thinking beyond the codex - for example, what else can functions do? Can you build your own library? If you'd like to brainstorm some questions, feel free to reach out to a coach!"
       },
       "question_7": {
         "pass": true,
         "percentage": 80,
-        "feedback": "Great observations about WonderBot! Noticing patterns in how it responds, like asking follow-up questions and using positive affirmations, shows that you're paying close attention. This is a great skill to have when using AI tools. Nice work!"
+        "feedback": "Great observations about WonderBot! It's interesting that you noticed both its questioning style and its positive affirmations. Being aware of how WonderBot communicates will help you use it more effectively in the future. Awesome reflection!"
       },
       "question_8": {
         "pass": true,
-        "percentage": 60,
-        "feedback": "It's awesome that you enjoyed being challenged to figure things out on your own\u2014that's such a great mindset for a coder! Could you expand a little more on what specific challenges you enjoyed or what you learned from them? Keep up the great work!"
+        "percentage": 65,
+        "feedback": "It's awesome that you enjoyed the challenge of figuring things out on your own - that's such an important coding mindset! To expand a bit, what specific parts challenged you the most, and how did you feel when you finally figured them out? Keep up the great work!"
       }
     }
   }

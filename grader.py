@@ -1,6 +1,7 @@
 import json
 import base64
 import re
+import os
 from dotenv import load_dotenv
 import anthropic
 load_dotenv() 
@@ -31,7 +32,9 @@ class Grader:
            """Intializes the grader"""
            self.context = None
            self.questions_examples = None
+           self.assignment = None
            self.config_path = "config"
+           self.pdf_path = None
 
     def api_call(self, prompt,typecon):
         """Handles Claude API call, Prompt = Prompt, Typecon, -> type of input and input"""
@@ -55,7 +58,8 @@ class Grader:
 
     def grade_pdf(self, pdf_path: str):
         """Does all of the main grading work."""
-        student_resp = self.extract_pdf_data(pdf_path)
+        self.pdf_path = pdf_path
+        student_resp = self.extract_pdf_data()
         if isinstance(student_resp, dict) and "grader_error" in student_resp:
             return student_resp
         if all(a == "<BLANK>" for a in student_resp['answers']):
@@ -64,23 +68,24 @@ class Grader:
         claude_resp = self.api_call(GRADER_PROMPT, {"type": "text", "text": prompt})
         claude_resp = json.loads(claude_resp)
         results = { 
-            'assignment': self.config_path,
+            'assignment': self.assignment,
             'student' : student_resp,
             'grades' : claude_resp,
         }
         return results
 
-    def extract_pdf_data(self,pdf_path):
+    def extract_pdf_data(self):
         """extracts pdf info and loads config."""
         self.config_path = self.config_path + "/intro_coding/assignment_1.json"
         """temporary auto load"""
         pdf_base64 = None
         with open(self.config_path) as f:
-            assignment = json.load(f)
-            self.questions_examples = assignment['questions']
-            self.context = assignment['context'] 
+            assignment_config = json.load(f)
+            self.questions_examples = assignment_config['questions']
+            self.context = assignment_config['context'] 
+            self.assignment = assignment_config['assignment']
         try:
-            with open(pdf_path,"rb") as pdf:
+            with open(self.pdf_path,"rb") as pdf:
               pdf_base64 = pdf.read()
         except FileNotFoundError:
             return {"grader_error": "PDF could not be read"}
@@ -154,16 +159,40 @@ class Grader:
     "question_8": {{"pass": true/false, "percentage": 0-100, "feedback": "..."}}
      }}"""
 
-    def handleoutput(self,results,output_path): 
-        """Prints everything into a json and determines if it needs manual review."""
+    def print_to_json(self,results,output_path,student_id): 
+        """Prints everything into a json file in a folder and determines if it needs manual review."""
+        #TO DO: 4 folders: errors, manual review, pass, and fail
         if isinstance(results, dict) and "grader_error" in results:
-            pass
-         #TO DO: Make folder with Answers and PDF?  
+            output_path = output_path + "error/"+ f"{self.assignment}.json"
+            results["student_id"] = student_id
+            results['submission'] = self.pdf_path
+        else: 
+            output_path = self.sum_grades(output_path,student_id,results)
         try:
             with open("") as f:
                 all_results = json.load(f)
         except FileNotFoundError:
             all_results = [] 
         all_results.append(results)
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
         with open(output_path, "w") as f:
             json.dump(all_results, f, indent=2)
+
+    def sum_grades(self,output_path,student_id,results):
+        """Actually determines pass,fail, or manual review based on set parameters."""     
+        correctness_count = 0
+        precentage_avg = 0
+        for question in results['grades'].values():
+            if question['pass']:
+                correctness_count += 1
+            precentage_avg += question['percentage']
+        precentage_avg = precentage_avg / 8 
+        if (correctness_count <= 4):
+        #NOTE: This and auto pass are done by student id for sake of data storage, feel free to change. 
+            output_path = output_path + "fail/" + student_id  +".json"
+        elif ((precentage_avg > 75) and (correctness_count >= 6)): 
+            output_path = output_path + "pass/" + student_id + ".json"
+        else: 
+             #NOTE: Manual review works a bit differently as going by assignment makes more sense for our grader. 
+             output_path = output_path + "manual_review/" +  self.assignment + "/" + student_id +".json"     
+        return output_path

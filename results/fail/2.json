@@ -1,0 +1,69 @@
+[
+  {
+    "assignment": "config/intro_coding/assignment_1.json",
+    "student": {
+      "numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "answers": [
+        "I did not struggle long or hard enough to be worthy of being in this answer, but this week's experiences taught me that different languages are similar and different in many ways.",
+        "Learning the functions, learning syntax, and defining things",
+        "Understanding the code is the first and most important step to coding.",
+        "In this codex, I learned that I should indent the lines in a function after it is defined to keep the code organized, and to keep from receiving an error from Python.",
+        "I did not really struggle with anything.",
+        "I didn't have a question so I used yours",
+        "I'm surprised at how quickly it is to respond and still give proper answers.",
+        "Nothing was relevant"
+      ]
+    },
+    "grades": {
+      "question_1": {
+        "pass": false,
+        "percentage": 30,
+        "feedback": "It's wonderful that you didn't face major struggles this week! However, we'd love to hear more about your development as a coder. Can you share specific examples of how languages are similar and different? Try to expand on what you learned and how it impacts your coding journey. If you're feeling stuck, feel free to reach out to a coach for guidance!"
+      },
+      "question_2": {
+        "pass": false,
+        "percentage": 35,
+        "feedback": "Nice job identifying some key points from the codex! To strengthen your response, try explaining a bit more about each topic. For example, what kinds of functions did you learn? What syntax stood out to you? Adding details will help solidify your understanding. You've got this!"
+      },
+      "question_3": {
+        "pass": false,
+        "percentage": 35,
+        "feedback": "Great start with your summary! Understanding code is definitely important. To improve, try to include specific concepts from the codex, like functions, variables, or libraries. Reaching out to a coach could help you dig deeper into these ideas if you'd like!"
+      },
+      "question_4": {
+        "pass": true,
+        "percentage": 65,
+        "feedback": "Nice job connecting indentation to keeping code organized! Indentation is super important in Python. To strengthen your response, try explicitly naming the competency you're matching to, such as using best practices for writing readable code. Keep up the good work!"
+      },
+      "question_5": {
+        "pass": false,
+        "percentage": 25,
+        "feedback": "It's great to hear you didn't struggle this week! Even so, try to reflect on a concept that challenged you a little, or share how you approached a tricky problem. Reflecting on your process helps reinforce your learning. If you'd like to chat more, feel free to reach out to a coach!"
+      },
+      "question_6": {
+        "pass": false,
+        "percentage": 20,
+        "feedback": "It's okay to borrow a question, but we'd love to hear your own curiosity! Think about something in the codex that made you wonder 'what if?' or 'how does this work?' If you're feeling stuck, a coach would be happy to brainstorm with you. Give it another try!"
+      },
+      "question_7": {
+        "pass": true,
+        "percentage": 60,
+        "feedback": "Great observation about WonderBot's quick responses! It's true that it can be a helpful tool for getting fast answers. To expand your reflection, you could share what didn't surprise you as well. Keep being curious!"
+      },
+      "question_8": {
+        "pass": false,
+        "percentage": 15,
+        "feedback": "We're sorry to hear that nothing felt relevant this week. Could you share more about why? Was there a part of the codex that was confusing or didn't connect for you? We'd love to help you find value in what you're learning\u2014please reach out to a coach by email or schedule a call so we can support you!"
+      }
+    }
+  }
+]
